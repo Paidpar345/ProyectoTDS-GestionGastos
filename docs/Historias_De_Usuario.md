@@ -4,6 +4,7 @@
 ## 1. Registrar gasto
 
 Como usuario registrado, quiero registrar un gasto indicando cantidad, fecha y categoría, para mantener un control actualizado de mis finanzas personales.
+
 Criterios de verificación:
 
 - El usuario debe poder introducir una cantidad positiva, seleccionar una fecha y elegir una categoría existente o crear una nueva antes de guardar.
@@ -14,6 +15,7 @@ Criterios de verificación:
 ## 2. Editar gasto
 
 Como usuario registrado, quiero editar un gasto existente, para corregir errores o actualizar la información registrada.
+
 Criterios de verificación:
 
 - El usuario debe poder abrir un formulario de edición con los datos actuales del gasto pre-rellenados.
@@ -24,6 +26,7 @@ Criterios de verificación:
 ## 3. Eliminar gasto
 
 Como usuario registrado, quiero eliminar un gasto, para limpiar registros duplicados o incorrectos.
+
 Criterios de verificación:
 
 - El sistema debe solicitar confirmación antes de eliminar definitivamente el gasto.
@@ -34,6 +37,7 @@ Criterios de verificación:
 ## 4. Gestionar categorías
 
 Como usuario registrado, quiero crear, renombrar y eliminar categorías, para organizar mis gastos más allá de las predefinidas.
+
 Criterios de verificación:
 
 - El sistema debe permitir crear categorías con nombre no vacío y no duplicado.
@@ -44,6 +48,7 @@ Criterios de verificación:
 ## 5. Listar y filtrar gastos
 
 Como usuario registrado, quiero listar y filtrar gastos por meses, intervalos de fechas y categorías, para analizar subconjuntos específicos.
+
 Criterios de verificación:
 
 - La lista/tabla debe mostrar fecha, categoría, descripción opcional e importe, con ordenación por columna.
@@ -54,6 +59,7 @@ Criterios de verificación:
 ## 6. Visualizaciones por categoría
 
 Como usuario registrado, quiero ver gráficos de barras o circulares por categoría, para comprender visualmente la distribución de mis gastos.
+
 Criterios de verificación:
 
 - Debe mostrarse la distribución por categoría y los totales del periodo filtrado, coherente con la lista visible.
@@ -64,6 +70,7 @@ Criterios de verificación:
 ## 7. Vista calendario (opcional)
 
 Como usuario registrado, quiero visualizar gastos en un calendario de día completo, para entender su distribución temporal.
+
 Criterios de verificación:
 
 - El calendario debe mostrar los gastos como eventos en su fecha, con detalles básicos.
@@ -74,6 +81,7 @@ Criterios de verificación:
 ## 8. Línea de comandos (CLI)
 
 Como usuario registrado, quiero registrar, modificar y borrar gastos desde una línea de comandos básica, para operar sin interfaz gráfica.
+
 Criterios de verificación:
 
 - Deben existir comandos “add”, “update” y “delete” con parámetros para cantidad, fecha, categoría e identificador según corresponda.
@@ -84,6 +92,7 @@ Criterios de verificación:
 ## 9. Configurar alertas de gasto
 
 Como usuario registrado, quiero configurar límites semanales, mensuales y por categoría, para recibir notificaciones al superar topes.
+
 Criterios de verificación:
 
 - Debe permitirse crear alertas con periodo, umbral y, opcionalmente, categoría vinculada.
@@ -94,6 +103,7 @@ Criterios de verificación:
 ## 10. Historial de notificaciones
 
 Como usuario registrado, quiero consultar el historial de notificaciones, para revisar avisos pasados y su contexto temporal.
+
 Criterios de verificación:
 
 - Debe listarse fecha, tipo de alerta y mensaje descriptivo de cada notificación.
@@ -104,6 +114,7 @@ Criterios de verificación:
 ## 11. Cuenta compartida (reparto equitativo)
 
 Como miembro de una cuenta compartida, quiero crear una cuenta con participantes y reparto equitativo por defecto, para dividir gastos de forma sencilla.
+
 Criterios de verificación:
 
 - Al crear la cuenta, el reparto debe ser igual para todos y la lista de personas no podrá modificarse posteriormente.
@@ -114,6 +125,7 @@ Criterios de verificación:
 ## 12. Cuenta compartida (porcentajes)
 
 Como miembro de una cuenta compartida, quiero definir porcentajes personalizados que sumen 100%, para reflejar acuerdos de contribución distintos.
+
 Criterios de verificación:
 
 - El sistema debe validar que la suma de porcentajes sea exactamente 100% antes de crear la cuenta.
@@ -124,6 +136,7 @@ Criterios de verificación:
 ## 13. Importar gastos externos
 
 Como usuario registrado, quiero importar gastos desde ficheros de texto de plataformas bancarias en diferentes formatos, para cargar datos externos rápidamente.
+
 Criterios de verificación:
 
 - Debe aceptarse un fichero válido, adaptarlo al modelo y crear los gastos correspondientes.
