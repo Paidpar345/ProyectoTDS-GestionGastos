@@ -168,7 +168,7 @@ Clases principales:
 - Alerta → Notificacion (0..*)
 - HistorialNotificaciones → Notificacion (1..*)
 
-![Diagrama de Clases](docs/imagenes/Diagrama_de_Clases.png)
+![Diagrama de Clases](imagenes/Diagrama_de_Clases.png)
 
 ## 2. Especificación de las historias de usuario del proyecto
 
