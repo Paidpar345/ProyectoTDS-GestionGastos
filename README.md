@@ -20,7 +20,7 @@ La persistencia de los datos se realiza en formato JSON y el sistema est√° dise√
 | --------------------- | ------------------------------ | --------------------- |
 | [Nombre del Alumno 1] | [email1@um.es]                 | [P_XX]                |
 | [Nombre del Alumno 2] | [email2@um.es]                 | [P_XX]                |
-| [Nombre del Alumno 3] | [email3@um.es]                 | [P_XX]                |
+| [Alonso Daniel Calatrava Navas] | [ad.calatravanavas@um.es]                 | [P_3.4]                |
 
 ---
 
