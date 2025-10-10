@@ -101,7 +101,7 @@ Para garantizar una arquitectura robusta, modular y extensible, se han implement
 
 Para una comprensión más profunda de la arquitectura, diseño y funcionalidades del proyecto, consulte la documentación completa ubicada en la carpeta `/docs`.
 
-*   **[Diagrama de Clases del Dominio](./docs/1_DiagramaDeClases.md)**
+*   **[Diagrama de Clases del Dominio](./docs/imagenes/Diagrama_de_Clases.png)**
 *   **[Historias de Usuario](./docs/2_HistoriasDeUsuario.md)**
 *   **[Diagrama de Interacción](./docs/3_DiagramaDeInteraccion.md)**
 *   **[Explicación de Arquitectura y Diseño](./docs/4_Arquitectura.md)**
