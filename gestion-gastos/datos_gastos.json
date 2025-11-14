@@ -1,0 +1,107 @@
+{
+  "gastos" : [ {
+    "id" : "7fb81128-3b0e-4887-969f-3c4dbe7112a2",
+    "cantidad" : 50.0,
+    "fecha" : "2025-01-10",
+    "descripcion" : "Compra Mercadona",
+    "categoria" : {
+      "id" : "e647890c-818b-4b4f-8c36-93b4ed7c5289",
+      "nombre" : "Alimentación",
+      "descripcion" : "Compras de comida y bebida"
+    },
+    "pagador" : null
+  }, {
+    "id" : "5f433afa-e085-48f6-bf87-52e0708612c8",
+    "cantidad" : 35.0,
+    "fecha" : "2025-01-11",
+    "descripcion" : "Gasolina Shell",
+    "categoria" : {
+      "id" : "0251018d-a6ae-46d2-811a-60a0be9bf6bb",
+      "nombre" : "Transporte",
+      "descripcion" : "Gasolina, transporte público"
+    },
+    "pagador" : null
+  }, {
+    "id" : "2234f0e1-daf6-4a7e-a937-a2df9cc56a33",
+    "cantidad" : 80.0,
+    "fecha" : "2025-01-13",
+    "descripcion" : "Farmacia",
+    "categoria" : {
+      "id" : "c70b7fbf-a56e-477b-8eb0-8ba75d59f54d",
+      "nombre" : "Salud",
+      "descripcion" : "Farmacia, médico"
+    },
+    "pagador" : null
+  }, {
+    "id" : "047f0efa-3016-4af3-94bb-38e26199ce77",
+    "cantidad" : 25.0,
+    "fecha" : "2025-01-14",
+    "descripcion" : "Libro Java",
+    "categoria" : {
+      "id" : "ee6c4e7b-213d-4f78-9975-be57ef3bdd1d",
+      "nombre" : "Educación",
+      "descripcion" : "Libros, cursos"
+    },
+    "pagador" : null
+  } ],
+  "categorias" : [ {
+    "id" : "e647890c-818b-4b4f-8c36-93b4ed7c5289",
+    "nombre" : "Alimentación",
+    "descripcion" : "Compras de comida y bebida"
+  }, {
+    "id" : "0251018d-a6ae-46d2-811a-60a0be9bf6bb",
+    "nombre" : "Transporte",
+    "descripcion" : "Gasolina, transporte público"
+  }, {
+    "id" : "6ef15d7b-4389-45f9-a658-898664d457b1",
+    "nombre" : "Entretenimiento",
+    "descripcion" : "Ocio, cine, eventos"
+  }, {
+    "id" : "c70b7fbf-a56e-477b-8eb0-8ba75d59f54d",
+    "nombre" : "Salud",
+    "descripcion" : "Farmacia, médico"
+  }, {
+    "id" : "ee6c4e7b-213d-4f78-9975-be57ef3bdd1d",
+    "nombre" : "Educación",
+    "descripcion" : "Libros, cursos"
+  } ],
+  "alertas" : [ ],
+  "cuentasCompartidas" : [ {
+    "id" : "be74ee52-de38-4584-8e91-d0479e7806ba",
+    "nombre" : "Rio De Janeiro",
+    "tipoDistribucion" : "EQUITATIVA",
+    "personas" : [ {
+      "id" : "6e72303e-ad18-451a-9426-34bd8a831744",
+      "nombre" : "Maria",
+      "porcentajeGasto" : 33.333333333333336,
+      "saldo" : 6.666666666666666
+    }, {
+      "id" : "59a77f64-2fa7-49ab-b529-2a539cf1703e",
+      "nombre" : "Julian",
+      "porcentajeGasto" : 33.333333333333336,
+      "saldo" : -3.333333333333334
+    }, {
+      "id" : "80f64d46-8671-432e-ab56-ef57db0bd57d",
+      "nombre" : "Marcelo",
+      "porcentajeGasto" : 33.333333333333336,
+      "saldo" : -3.333333333333334
+    } ],
+    "gastos" : [ {
+      "id" : "f053ffcf-c765-402d-9af6-ca5bcfaac0e2",
+      "cantidad" : 10.0,
+      "fecha" : "2025-11-15",
+      "descripcion" : "Pago de Botellas de agua",
+      "categoria" : {
+        "id" : "c2b02b38-e26b-46bd-b3a9-d914380c7861",
+        "nombre" : "Compartido",
+        "descripcion" : "Gastos compartidos"
+      },
+      "pagador" : {
+        "id" : "6e72303e-ad18-451a-9426-34bd8a831744",
+        "nombre" : "Maria",
+        "porcentajeGasto" : 33.333333333333336,
+        "saldo" : 6.666666666666666
+      }
+    } ]
+  } ]
+}
