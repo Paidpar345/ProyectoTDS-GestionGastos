@@ -1,8 +1,9 @@
 package importador;
 
-import dominio.CatalogoCategorias;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 /**
  * Fábrica Singleton de adaptadores de formato para importación.
@@ -40,7 +41,7 @@ public class FabricaImportadores {
     
     public AdaptadorFormato obtenerAdaptador(String contenidoArchivo) {
         return adaptadores.stream()
-                .filter(a -> a.puedeManear(contenidoArchivo))
+                .filter(a -> a.puedeManejar(contenidoArchivo))
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(
                         "No se encontró un adaptador para este formato"));

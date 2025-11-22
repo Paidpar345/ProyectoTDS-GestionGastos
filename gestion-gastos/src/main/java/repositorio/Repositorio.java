@@ -27,6 +27,4 @@ public interface Repositorio {
     void guardarCuentasCompartidas(List<CuentaCompartida> cuentas);
     List<CuentaCompartida> obtenerTodasLasCuentas();
 
-    void cargarDatos();
-    void guardarDatos();
 }

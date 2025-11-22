@@ -15,6 +15,8 @@ import java.util.UUID;
  */
 
 public class Gasto {
+
+
     private String id;
     private double cantidad;
     

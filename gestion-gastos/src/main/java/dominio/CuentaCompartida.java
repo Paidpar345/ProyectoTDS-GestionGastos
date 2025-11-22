@@ -23,28 +23,43 @@ public class CuentaCompartida {
     
     public CuentaCompartida() {
         this.id = UUID.randomUUID().toString();
-        this.personas = new ArrayList<>();
+        this.personas = new ArrayList<>(); // Solo durante construcción
         this.gastos = new ArrayList<>();
     }
     
     public CuentaCompartida(String nombre, TipoDistribucion tipo, List<Persona> personas) {
-        this();
+        this.id = UUID.randomUUID().toString();
         this.nombre = nombre;
         this.tipoDistribucion = tipo;
-        configurarPersonas(personas);
-    }
-
-    private void configurarPersonas(List<Persona> personas) {
-        validarMinimoPersonas(personas);
+        this.gastos = new ArrayList<>();
         
-        if (tipoDistribucion == TipoDistribucion.PERSONALIZADA) {
+        // Validaciones
+        validarMinimoPersonas(personas);
+        if (tipo == TipoDistribucion.PERSONALIZADA) {
             validarPorcentajes(personas);
         } else {
             asignarPorcentajesEquitativos(personas);
         }
         
-        this.personas.addAll(personas);
+        // INMUTABILIDAD: Copia defensiva y marca como final
+        this.personas = new ArrayList<>(personas);
     }
+    
+    @com.fasterxml.jackson.annotation.JsonCreator
+    public CuentaCompartida(
+            @com.fasterxml.jackson.annotation.JsonProperty("id") String id,
+            @com.fasterxml.jackson.annotation.JsonProperty("nombre") String nombre,
+            @com.fasterxml.jackson.annotation.JsonProperty("tipoDistribucion") TipoDistribucion tipo,
+            @com.fasterxml.jackson.annotation.JsonProperty("personas") List<Persona> personas,
+            @com.fasterxml.jackson.annotation.JsonProperty("gastos") List<Gasto> gastos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.tipoDistribucion = tipo;
+        this.personas = new ArrayList<>(personas); // Copia defensiva
+        this.gastos = gastos != null ? new ArrayList<>(gastos) : new ArrayList<>();
+    }
+
+   
     
     private void validarMinimoPersonas(List<Persona> personas) {
         if (personas == null || personas.size() < 2) {
@@ -145,10 +160,6 @@ public class CuentaCompartida {
     
     public List<Persona> getPersonas() {
         return Collections.unmodifiableList(personas);
-    }
-    
-    public void setPersonas(List<Persona> personas) {
-        this.personas = personas;
     }
     
     public List<Gasto> getGastos() {

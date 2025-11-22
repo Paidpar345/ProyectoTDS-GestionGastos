@@ -9,6 +9,9 @@ import repositorio.Repositorio;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import catalogos.CatalogoAlertas;
+import catalogos.CatalogoCategorias;
+
 /**
  * Controlador general para las operaciones relacionadas con el sistema de alertas de gasto.
  * <p>

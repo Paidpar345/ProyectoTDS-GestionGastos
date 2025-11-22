@@ -9,6 +9,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import catalogos.CatalogoCategorias;
+import catalogos.CatalogoCuentasCompartidas;
+
 /**
  * Controlador de cuentas compartidas de gasto.
  * <p>

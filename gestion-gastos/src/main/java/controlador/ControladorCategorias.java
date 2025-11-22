@@ -1,10 +1,11 @@
 package controlador;
 
 import dominio.Categoria;
-import dominio.CatalogoCategorias;
 import repositorio.Repositorio;
 import java.util.List;
 import java.util.Optional;
+
+import catalogos.CatalogoCategorias;
 
 /**
  * Controlador para la gestión y mantenimiento de categorías de gasto.

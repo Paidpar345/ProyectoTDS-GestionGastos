@@ -17,6 +17,6 @@ public interface AdaptadorFormato {
     
     List<Gasto> parsear(String contenidoArchivo);
     
-    
-    boolean puedeManear(String contenidoArchivo);
+
+	boolean puedeManejar(String contenidoArchivo);
 }

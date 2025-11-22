@@ -1,6 +1,9 @@
 package controlador;
 
-import dominio.*;
+import catalogos.CatalogoAlertas;
+import catalogos.CatalogoCategorias;
+import catalogos.CatalogoCuentasCompartidas;
+import catalogos.CatalogoGastos;
 import importador.AdaptadorBancario;
 import importador.FabricaImportadores;
 import repositorio.Repositorio;

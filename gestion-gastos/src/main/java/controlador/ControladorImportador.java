@@ -1,11 +1,12 @@
 package controlador;
 
-import dominio.CatalogoGastos;
 import dominio.Gasto;
 import importador.ImportadorDatos;
 import repositorio.Repositorio;
 import java.nio.file.Path;
 import java.util.List;
+
+import catalogos.CatalogoGastos;
 
 /**
  * Controlador para la importación de ficheros de gasto externo al sistema.

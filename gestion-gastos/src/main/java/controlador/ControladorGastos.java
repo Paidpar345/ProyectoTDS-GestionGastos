@@ -8,6 +8,9 @@ import java.time.Month;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import catalogos.CatalogoCategorias;
+import catalogos.CatalogoGastos;
+
 
 /**
  * Controlador principal para la gestión de gastos personales y familiares.
@@ -79,7 +82,6 @@ public class ControladorGastos {
         if (gasto != null) {
             catalogoGastos.eliminarGasto(gasto);
             persistir();
-            controladorAlertas.verificarAlertas(catalogoGastos.obtenerTodos());
         }
     }
 
