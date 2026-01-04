@@ -19,8 +19,6 @@ import repositorio.RepositorioJSON;
  * @version 1.0
  * @since 2025-01-01
  */
-
-
 public class FachadaAplicacion {
     private static FachadaAplicacion instancia;
 
@@ -60,9 +58,9 @@ public class FachadaAplicacion {
 
         controladorAlertas = new ControladorAlertas(repositorio, catalogoAlertas, catalogoCategorias);
         controladorGastos = new ControladorGastos(repositorio, catalogoGastos, catalogoCategorias, controladorAlertas);
-        controladorCategorias = new ControladorCategorias(repositorio, catalogoCategorias);
-        controladorCuentas = new ControladorCuentasCompartidas(repositorio, catalogoCuentas, catalogoCategorias);
-        controladorImportador = new ControladorImportador(repositorio, catalogoGastos, controladorAlertas);
+        controladorCategorias = new ControladorCategorias(repositorio, catalogoCategorias, catalogoGastos, catalogoAlertas);  // ⬅️ ACTUALIZAR
+        controladorCuentas = new ControladorCuentasCompartidas(repositorio, catalogoCuentas, catalogoCategorias, catalogoGastos);  // ⬅️ ACTUALIZAR
+        controladorImportador = new ControladorImportador(repositorio, catalogoGastos, catalogoCategorias, controladorAlertas);
 
         configurarImportador(catalogoCategorias);
         

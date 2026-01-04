@@ -6,6 +6,7 @@ import repositorio.Repositorio;
 import java.nio.file.Path;
 import java.util.List;
 
+import catalogos.CatalogoCategorias;
 import catalogos.CatalogoGastos;
 
 /**
@@ -17,18 +18,20 @@ import catalogos.CatalogoGastos;
  * @version 1.0
  * @since 2025-01-01
  */
-
-
 public class ControladorImportador {
     private Repositorio repositorio;
     private CatalogoGastos catalogoGastos;
+    private CatalogoCategorias catalogoCategorias;
     private ImportadorDatos importador;
     private ControladorAlertas controladorAlertas;
     
-    public ControladorImportador(Repositorio repositorio, CatalogoGastos catalogoGastos,
+    public ControladorImportador(Repositorio repositorio, 
+                                CatalogoGastos catalogoGastos,
+                                CatalogoCategorias catalogoCategorias,
                                 ControladorAlertas controladorAlertas) {
         this.repositorio = repositorio;
         this.catalogoGastos = catalogoGastos;
+        this.catalogoCategorias = catalogoCategorias;
         this.controladorAlertas = controladorAlertas;
         this.importador = new ImportadorDatos();
     }
@@ -36,13 +39,13 @@ public class ControladorImportador {
     
     public List<Gasto> importarDesdeArchivo(Path rutaArchivo) {
         try {
-
             List<Gasto> gastosImportados = importador.importarDesdeArchivo(rutaArchivo);
-
+            
             gastosImportados.forEach(catalogoGastos::agregarGasto);
-
+            
             repositorio.guardarGastos(catalogoGastos.obtenerTodos());
-
+            repositorio.guardarCategorias(catalogoCategorias.obtenerTodas());
+            
             controladorAlertas.verificarAlertas(catalogoGastos.obtenerTodos());
             
             return gastosImportados;

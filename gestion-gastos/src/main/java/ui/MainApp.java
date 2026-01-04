@@ -78,12 +78,7 @@ public class MainApp extends Application {
         mostrarVistaGastos();
 
         Scene scene = new Scene(rootPane);
-        try {
-            String css = getClass().getResource("estilos.css").toExternalForm();
-            scene.getStylesheets().add(css);
-        } catch (Exception e) {
-            System.out.println("No se encontró archivo CSS");
-        }
+       
 
         primaryStage.setScene(scene);
         primaryStage.show();
