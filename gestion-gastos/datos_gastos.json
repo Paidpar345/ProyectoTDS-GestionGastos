@@ -1,6 +1,432 @@
 {
-  "gastos" : [ ],
-  "categorias" : [ ],
-  "alertas" : [ ],
-  "cuentasCompartidas" : [ ]
+  "gastos" : [ {
+    "id" : "3a8aa05d-bfd8-4a9c-9300-f93342eeb9f0",
+    "cantidad" : 4.5,
+    "fecha" : "2022-03-02",
+    "descripcion" : "Desayuno en cafetería",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "c46739db-f305-4e52-a6b4-66aa2d83c44c",
+    "cantidad" : 6.0,
+    "fecha" : "2022-03-02",
+    "descripcion" : "Billetes de metro",
+    "categoria" : {
+      "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+      "nombre" : "Transporte Público",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "865e54be-a667-400c-ba17-094e70805005",
+    "cantidad" : 3.99,
+    "fecha" : "2022-03-01",
+    "descripcion" : "Alquiler de película en streaming",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "729c70e6-690f-4333-ada8-17048795b00a",
+    "cantidad" : 45.0,
+    "fecha" : "2022-03-01",
+    "descripcion" : "Repostaje en gasolinera",
+    "categoria" : {
+      "id" : "447581b8-7bc1-4e14-bd14-720df234628d",
+      "nombre" : "Gasolina",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "6fe4162f-deaa-4f6a-926b-d7d52c518693",
+    "cantidad" : 18.5,
+    "fecha" : "2022-03-01",
+    "descripcion" : "Pizza para cenar",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "9d3bfd99-7315-4e18-862c-6f5f05f500a1",
+    "cantidad" : 12.0,
+    "fecha" : "2022-03-01",
+    "descripcion" : "Partida de billar en bar",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "a4e708ea-b49c-4ce2-b0e9-cf47aa398ef7",
+    "cantidad" : 1.5,
+    "fecha" : "2022-03-01",
+    "descripcion" : "Billete de autobús urbano",
+    "categoria" : {
+      "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+      "nombre" : "Transporte Público",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "af115453-c262-46d2-98bd-0a604ea618b6",
+    "cantidad" : 9.9,
+    "fecha" : "2022-02-28",
+    "descripcion" : "Compra de taza personalizada",
+    "categoria" : {
+      "id" : "55eb6184-a902-4af7-bcb5-340c78b8d061",
+      "nombre" : "Regalos",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "bca0f6d4-cfa1-4fa4-b618-33ff80550c69",
+    "cantidad" : 32.4,
+    "fecha" : "2022-02-28",
+    "descripcion" : "Compra en supermercado",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "8f15e19f-5633-453d-a79b-aa257ab25039",
+    "cantidad" : 2.99,
+    "fecha" : "2022-02-27",
+    "descripcion" : "Juego para móvil",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "98afe2eb-74bd-41b5-87d0-a6676b35a863",
+    "cantidad" : 21.0,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Cena de hamburguesas",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "09c9b31d-2390-4324-9c2e-66ba123ed621",
+    "cantidad" : 30.0,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Repostaje coche compartido",
+    "categoria" : {
+      "id" : "447581b8-7bc1-4e14-bd14-720df234628d",
+      "nombre" : "Gasolina",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "304172aa-bac1-4a5f-ac14-15b0e5a15610",
+    "cantidad" : 7.5,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Cambio de bombilla del coche",
+    "categoria" : {
+      "id" : "588960cd-d87d-48b3-a129-a03a82e60801",
+      "nombre" : "Reparaciones",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "2497a6c1-5e54-4cd9-8476-e1a7e140b4ba",
+    "cantidad" : 20.0,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Recarga tarjeta de transporte",
+    "categoria" : {
+      "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+      "nombre" : "Transporte Público",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "2ec692f2-561a-42cb-9e6b-13f727686557",
+    "cantidad" : 5.25,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Bocadillo y refresco",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "fffa20be-6288-4a52-a2c7-5a007d0f411c",
+    "cantidad" : 6.0,
+    "fecha" : "2022-02-26",
+    "descripcion" : "Cerveza en pub",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "d552a1e6-95b7-4389-bf6a-b9550bf03151",
+    "cantidad" : 12.75,
+    "fecha" : "2022-02-25",
+    "descripcion" : "Compra de vitaminas",
+    "categoria" : {
+      "id" : "ac1f2b3b-4514-434a-b2ac-1570274f5cb7",
+      "nombre" : "Gastos Médicos",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "d86dcb14-80ba-42c8-a875-78795d290556",
+    "cantidad" : 4.99,
+    "fecha" : "2022-02-24",
+    "descripcion" : "Compra de música digital",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "f7c6a858-1a81-4073-bd92-9bc8f37449ea",
+    "cantidad" : 28.0,
+    "fecha" : "2022-02-24",
+    "descripcion" : "Cena en restaurante",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "9173374a-62c2-48c2-af81-b81cc7439d9f",
+    "cantidad" : 11.0,
+    "fecha" : "2022-02-24",
+    "descripcion" : "Taxi nocturno",
+    "categoria" : {
+      "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+      "nombre" : "Transporte Público",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "9a135ce8-0f71-4bf1-90e5-4bcdee78f9cb",
+    "cantidad" : 15.0,
+    "fecha" : "2022-02-23",
+    "descripcion" : "Compra de tarjeta regalo",
+    "categoria" : {
+      "id" : "55eb6184-a902-4af7-bcb5-340c78b8d061",
+      "nombre" : "Regalos",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "13d9857d-c945-415e-bcca-418079ae4f3d",
+    "cantidad" : 24.6,
+    "fecha" : "2022-02-23",
+    "descripcion" : "Pedido de sushi a domicilio",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "f6b87e5c-bf50-47b2-a958-8d10c8ff50d7",
+    "cantidad" : 20.0,
+    "fecha" : "2022-02-23",
+    "descripcion" : "Repostaje rápido",
+    "categoria" : {
+      "id" : "447581b8-7bc1-4e14-bd14-720df234628d",
+      "nombre" : "Gasolina",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "978bdc18-fbf7-4990-a27f-75fbb3e9dc10",
+    "cantidad" : 14.5,
+    "fecha" : "2022-02-22",
+    "descripcion" : "Billete de tren",
+    "categoria" : {
+      "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+      "nombre" : "Transporte Público",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "2ebca4b8-3b77-4825-a481-0ce7ef3b779e",
+    "cantidad" : 5.99,
+    "fecha" : "2022-02-21",
+    "descripcion" : "Alquiler de videojuego",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "9839f798-488f-41a8-9055-56143afb031a",
+    "cantidad" : 19.8,
+    "fecha" : "2022-02-21",
+    "descripcion" : "Compra de herramientas básicas",
+    "categoria" : {
+      "id" : "588960cd-d87d-48b3-a129-a03a82e60801",
+      "nombre" : "Reparaciones",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "e85c854a-5797-42a3-a2aa-ce848f6749bc",
+    "cantidad" : 8.4,
+    "fecha" : "2022-02-21",
+    "descripcion" : "Compra de termómetro digital",
+    "categoria" : {
+      "id" : "ac1f2b3b-4514-434a-b2ac-1570274f5cb7",
+      "nombre" : "Gastos Médicos",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "661f2c7f-faf4-454d-a281-d534bb29c0f8",
+    "cantidad" : 3.2,
+    "fecha" : "2022-02-21",
+    "descripcion" : "Café y bollería",
+    "categoria" : {
+      "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+      "nombre" : "Comida",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "3a8019b0-311e-485c-aa1c-3a5581354956",
+    "cantidad" : 16.0,
+    "fecha" : "2022-02-20",
+    "descripcion" : "Entradas para el cine",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "pagador" : null
+  }, {
+    "id" : "258e8463-9787-46c9-95cb-132d29ca194e",
+    "cantidad" : 10.0,
+    "fecha" : "2026-01-04",
+    "descripcion" : "comida",
+    "categoria" : {
+      "id" : "d2948146-f2d3-4018-b7b1-46b41a214123",
+      "nombre" : "Compartido",
+      "descripcion" : "Gastos compartidos"
+    },
+    "pagador" : {
+      "id" : "699ef3da-f128-46ee-9471-35b58bca1fd1",
+      "nombre" : "Luis",
+      "porcentajeGasto" : 50.0,
+      "saldo" : 5.0
+    }
+  } ],
+  "categorias" : [ {
+    "id" : "e16fc533-2994-4668-8c19-79cf682afbd0",
+    "nombre" : "Alimentación",
+    "descripcion" : "Compras de comida y bebida"
+  }, {
+    "id" : "9cafc841-1734-4d27-860a-d74840beaa4b",
+    "nombre" : "Entretenimiento",
+    "descripcion" : "Ocio, cine, eventos"
+  }, {
+    "id" : "c7511be1-94b1-43a9-964f-3639c960408b",
+    "nombre" : "Salud",
+    "descripcion" : "Farmacia, médico"
+  }, {
+    "id" : "cf537703-3352-42b2-abb0-e21adc5c66f5",
+    "nombre" : "Educación",
+    "descripcion" : "Libros, cursos"
+  }, {
+    "id" : "fa787da9-badd-42de-8fd4-6b6c650dcaca",
+    "nombre" : "Comida",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "4cdd623d-b893-4d8a-80c6-fb050ad38868",
+    "nombre" : "Transporte Público",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+    "nombre" : "Ocio",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "447581b8-7bc1-4e14-bd14-720df234628d",
+    "nombre" : "Gasolina",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "55eb6184-a902-4af7-bcb5-340c78b8d061",
+    "nombre" : "Regalos",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "588960cd-d87d-48b3-a129-a03a82e60801",
+    "nombre" : "Reparaciones",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "ac1f2b3b-4514-434a-b2ac-1570274f5cb7",
+    "nombre" : "Gastos Médicos",
+    "descripcion" : "Importada automáticamente"
+  }, {
+    "id" : "d2948146-f2d3-4018-b7b1-46b41a214123",
+    "nombre" : "Compartido",
+    "descripcion" : "Gastos compartidos"
+  } ],
+  "alertas" : [ {
+    "id" : "0257a342-f7a4-492f-aa4c-37bc97240a7d",
+    "limiteGasto" : 100.0,
+    "periodo" : "MENSUAL",
+    "categoria" : {
+      "id" : "734aa718-a244-4d1d-9334-cc06985613fb",
+      "nombre" : "Ocio",
+      "descripcion" : "Importada automáticamente"
+    },
+    "activa" : true,
+    "notificaciones" : [ ]
+  } ],
+  "cuentasCompartidas" : [ {
+    "id" : "642f5cd5-934a-472e-9b67-7a99d2f20b7f",
+    "nombre" : "Madrid",
+    "tipoDistribucion" : "EQUITATIVA",
+    "personas" : [ {
+      "id" : "699ef3da-f128-46ee-9471-35b58bca1fd1",
+      "nombre" : "Luis",
+      "porcentajeGasto" : 50.0,
+      "saldo" : 5.0
+    }, {
+      "id" : "cf1b0800-69a6-40ff-9870-cbe525635ec2",
+      "nombre" : "Gracia",
+      "porcentajeGasto" : 50.0,
+      "saldo" : -5.0
+    } ],
+    "gastos" : [ {
+      "id" : "258e8463-9787-46c9-95cb-132d29ca194e",
+      "cantidad" : 10.0,
+      "fecha" : "2026-01-04",
+      "descripcion" : "comida",
+      "categoria" : {
+        "id" : "d2948146-f2d3-4018-b7b1-46b41a214123",
+        "nombre" : "Compartido",
+        "descripcion" : "Gastos compartidos"
+      },
+      "pagador" : {
+        "id" : "699ef3da-f128-46ee-9471-35b58bca1fd1",
+        "nombre" : "Luis",
+        "porcentajeGasto" : 50.0,
+        "saldo" : 5.0
+      }
+    } ]
+  } ]
 }

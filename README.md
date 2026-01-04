@@ -6,11 +6,23 @@
 
 ---
 
-## 📝 Descripción del Proyecto
+## 📋 Descripción del proyecto
 
-Este proyecto consiste en el desarrollo de una aplicación de escritorio para la gestión y el control de gastos personales y compartidos. La aplicación permite a los usuarios registrar, visualizar, filtrar y analizar sus finanzas de manera sencilla y efectiva, tanto a través de una interfaz gráfica intuitiva como de una línea de comandos.
+Este proyecto consiste en el desarrollo de una **aplicación de escritorio completa para la gestión inteligente de gastos personales y compartidos**, diseñada para ayudar a usuarios individuales, familias y grupos de amigos a tomar el control total de sus finanzas de manera sencilla y efectiva.
 
-La persistencia de los datos se realiza en formato JSON y el sistema está diseñado siguiendo principios de buena arquitectura de software y patrones de diseño para garantizar su mantenibilidad y extensibilidad.
+### 💡 ¿Para qué sirve?
+
+La aplicación permite **registrar todos los gastos diarios** (compra en el supermercado, gasolina, cena con amigos, suscripciones) y **organizarlos automáticamente** por categorías como Alimentación, Transporte, Ocio, Salud o cualquier otra que el usuario defina.
+
+**En tres clics puedes:**
+
+1. Registrar un gasto: "50€ en Mercadona el 4/1/2026 - Comida"
+2. Ver cuánto has gastado esta semana en comida
+3. Recibir una alerta si te acercas al límite mensual
+
+### 👥 Gestión de gastos compartidos
+
+Perfecta para **convivientes, familias o grupos de amigos** que comparten gastos:
 
 ---
 
@@ -18,9 +30,9 @@ La persistencia de los datos se realiza en formato JSON y el sistema está dise�
 
 | Nombre y Apellidos              | Correo Electrónico        | Subgrupo de Prácticas |
 | ------------------------------- | ------------------------- | --------------------- |
-| [Nombre del Alumno 1]           | [email1@um.es]            | [P_XX]                |
-| [Nombre del Alumno 2]           | [email2@um.es]            | [P_XX]                |
 | [Alonso Daniel Calatrava Navas] | [ad.calatravanavas@um.es] | [P_3.4]               |
+| [xx]                            | [ejemplo1@um.es]          | [xx]                  |
+| [xx]                            | [ejemplo2@um.es]          | [xx]                  |
 
 ---
 
@@ -43,59 +55,55 @@ La aplicación incluye las siguientes características:
 
 ## 🛠️ Tecnologías y Librerías
 
-- **Lenguaje**: Java [Indicar versión, ej: 11]
+- **Lenguaje**: Java 17 o superior
 - **Interfaz Gráfica**: JavaFX
 - **Persistencia de Datos**: Jackson (para serialización a JSON)
 - **Gestión de Dependencias**: Apache Maven
 - **Control de Versiones**: Git y GitHub
 
----
-
-## 📐 Patrones de Diseño Aplicados
-
-Para garantizar una arquitectura robusta, modular y extensible, se han implementado los siguientes patrones de diseño:
-
-- **Repositorio**: Para desacoplar la lógica de negocio de la capa de persistencia de datos.
-- **Estrategia (Strategy)**: Utilizado para gestionar las diferentes lógicas de las alertas (semanal, mensual) y los métodos de división de gastos en cuentas compartidas (equitativa, por porcentaje).
-- **Adaptador (Adapter)**: Implementado en el sistema de importación para adaptar datos de ficheros externos al modelo de dominio de la aplicación.
-- **Método Factoría (Factory Method)**: Usado para crear las instancias adecuadas de los importadores de datos.
-- **Singleton**: Aplicado en clases que requieren una única instancia global para coordinar acciones en todo el sistema.
-- **[Opcional]** _Mencionar otros patrones usados (ej: Observer, Command, etc.)._
-
----
-
 ## 🚀 Cómo Ejecutar el Proyecto
 
 ### Prerrequisitos
 
-- JDK (Java Development Kit) [Versión, ej: 11 o superior].
+- JDK (Java Development Kit) (Versión 17 o superior)
 - Apache Maven.
 - Git.
 
 ### Pasos para la Ejecución
 
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone [URL de tu repositorio de GitHub]
-    ```
-2.  **Navegar al directorio del proyecto:**
-    ```bash
-    cd [nombre-del-repositorio]
-    ```
-3.  **Compilar el proyecto y descargar dependencias con Maven:**
-    ```bash
-    mvn clean install
-    ```
-4.  **Ejecutar la aplicación:**
-    - **Desde la línea de comandos con Maven:**
-      ```bash
-      mvn javafx:run
-      ```
-    - **Ejecutando el archivo JAR generado (después de compilar):**
-      ```bash
-      java -jar target/[nombre-del-jar-generado].jar
-      ```
-      _(Asegúrate de configurar el `maven-shade-plugin` o similar si optas por esta vía)._
+1. **Clonar el repositorio:**
+
+   ```bash
+   git clone https://github.com/antcanor/ProyectoTDS-GestionGastos.git
+   ```
+
+2. **Navegar al directorio del proyecto:**
+
+   ```bash
+   cd [nombre-del-repositorio]
+   ```
+
+3. **Compilar el proyecto y descargar dependencias con Maven:**
+
+   ```bash
+   mvn clean install
+   ```
+
+4. **Ejecutar la aplicación:**
+
+   - **Desde la línea de comandos con Maven:**
+
+     ```bash
+     mvn javafx:run
+     ```
+
+   - **Ejecutando el archivo JAR generado (después de compilar):**
+
+     ```bash
+     java -jar target/[nombre-del-jar-generado].jar
+     ```
+
+     _(Asegúrate de configurar el `maven-shade-plugin` o similar si optas por esta vía)._
 
 ---
 
@@ -103,11 +111,11 @@ Para garantizar una arquitectura robusta, modular y extensible, se han implement
 
 Para una comprensión más profunda de la arquitectura, diseño y funcionalidades del proyecto, consulte la documentación completa ubicada en la carpeta `/docs`.
 
-- **[Diagrama de Clases del Dominio](./docs/imagenes/Diagrama_de_Clases.png)**
-- **[Historias de Usuario](./docs/2_HistoriasDeUsuario.md)**
-- **[Diagrama de Interacción](./docs/3_DiagramaDeInteraccion.md)**
-- **[Explicación de Arquitectura y Diseño](./docs/4_Arquitectura.md)**
-- **[Explicación de Patrones de Diseño](./docs/5_Patrones.md)**
-- **[Manual de Usuario](./docs/6_ManualDeUsuario.md)**
+- **[Diagrama de Clases del Dominio](./docs/imagenes/Modelo_De_Dominio.png)**
+- **[Historias de Usuario](./docs/Proyecto.md)**
+- **[Diagrama de Interacción](./docs/Proyecto.md)**
+- **[Explicación de Arquitectura y Diseño](./docs/Proyecto.md)**
+- **[Explicación de Patrones de Diseño](./docs/Proyecto.md)**
+- **[Manual de Usuario](./docs/Manual_De_Usuario.md)**
 
 ---

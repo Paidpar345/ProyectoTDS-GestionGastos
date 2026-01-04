@@ -35,20 +35,19 @@
             <version>${javafx.version}</version>
         </dependency>
 
-		<dependency>
-    		<groupId>org.controlsfx</groupId>
-    		<artifactId>controlsfx</artifactId>
-    		<version>11.2.1</version>
-		</dependency>
-		
-		 <!-- CalendarFX para vista de calendario -->
-    <dependency>
-        <groupId>com.calendarfx</groupId>
-        <artifactId>view</artifactId>
-        <version>11.12.7</version>
-    </dependency>
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>11.2.1</version>
+        </dependency>
 
-	    
+        <!-- CalendarFX para vista de calendario -->
+        <dependency>
+            <groupId>com.calendarfx</groupId>
+            <artifactId>view</artifactId>
+            <version>11.12.7</version>
+        </dependency>
+
         <!-- Jackson para persistencia JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -62,36 +61,43 @@
             <version>${jackson.version}</version>
         </dependency>
         
+        <!-- Logback para logging (proveedor SLF4J) -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.4.14</version>
+        </dependency>
 
-		<dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>5.10.1</version>
-        <scope>test</scope>
-    </dependency>
-    
-    <!-- Mockito para mocks -->
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-core</artifactId>
-        <version>5.8.0</version>
-        <scope>test</scope>
-    </dependency>
-    
-    <dependency>
-        <groupId>org.mockito</groupId>
-        <artifactId>mockito-junit-jupiter</artifactId>
-        <version>5.8.0</version>
-        <scope>test</scope>
-    </dependency>
-    
-    <!-- AssertJ para assertions mejoradas -->
-    <dependency>
-        <groupId>org.assertj</groupId>
-        <artifactId>assertj-core</artifactId>
-        <version>3.24.2</version>
-        <scope>test</scope>
-    </dependency>
+        <!-- JUnit 5 para tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.1</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Mockito para mocks -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>5.8.0</version>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- AssertJ para assertions mejoradas -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.24.2</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
@@ -108,16 +114,16 @@
                 </configuration>
             </plugin>
             
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <includes>
-                    <include>**/*Test.java</include>
-                </includes>
-            </configuration>
-        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+            </plugin>
             
             <!-- Plugin JavaFX -->
             <plugin>
@@ -129,8 +135,6 @@
                 </configuration>
             </plugin>
             
-            
-
             <!-- Plugin para crear JAR ejecutable -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

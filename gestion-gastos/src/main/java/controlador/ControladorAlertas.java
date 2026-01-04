@@ -15,16 +15,15 @@ import catalogos.CatalogoCategorias;
 /**
  * Controlador general para las operaciones relacionadas con el sistema de alertas de gasto.
  * <p>
- * Esta clase aplica los patrones GRASP  y utiliza Polimorfismo para gestionar la lógica de creación y validación
- * de alertas periódicas (semanales, mensuales y por categoría). Además, gestiona el historial de notificaciones asociado a las alertas y
- * delega el almacenamiento de alertas en el repositorio correspondiente.<br>
+ * Esta clase aplica los patrones GRASP y utiliza Polimorfismo para gestionar la lógica de
+ * creación y validación de alertas periódicas (semanales, mensuales) y por categoría. Además,
+ * gestiona el historial de notificaciones asociado a las alertas y delega el almacenamiento
+ * de alertas en el repositorio correspondiente.<br>
  * Las estrategias de verificación de alertas utilizan el patrón Strategy.
  * </p>
- * @version 1.0
+ * @version 1.1
  * @since 2025-01-01
  */
-
-
 public class ControladorAlertas {
     private Repositorio repositorio;
     private CatalogoAlertas catalogoAlertas;
@@ -37,19 +36,20 @@ public class ControladorAlertas {
         this.catalogoCategorias = catalogoCategorias;
     }
     
-    
+    /**
+     * Crea una nueva alerta.
+     */
     public void crearAlerta(double limite, PeriodoTemporal periodo, String nombreCategoria) {
-        Categoria categoria = nombreCategoria != null ?
-                catalogoCategorias.buscarPorNombre(nombreCategoria).orElse(null) : null;
-
+        Categoria categoria = (nombreCategoria != null) 
+            ? catalogoCategorias.buscarPorNombre(nombreCategoria).orElse(null) 
+            : null;
+        
         EstrategiaAlerta estrategia = crearEstrategia(periodo);
-
         Alerta alerta = new Alerta(limite, periodo, categoria, estrategia);
+        
         catalogoAlertas.agregarAlerta(alerta);
         repositorio.guardarAlertas(catalogoAlertas.obtenerTodas());
     }
-    
-    
     
     private EstrategiaAlerta crearEstrategia(PeriodoTemporal periodo) {
         return switch (periodo) {
@@ -58,17 +58,42 @@ public class ControladorAlertas {
         };
     }
     
-    
-    public void modificarAlerta(String idAlerta, double nuevoLimite, boolean activa) {
+    /**
+     * Modifica una alerta existente (versión completa).
+     */
+    public void modificarAlerta(String idAlerta, double nuevoLimite, boolean activa, 
+                               PeriodoTemporal nuevoPeriodo, String nombreCategoria) {
         Alerta alerta = catalogoAlertas.buscarPorId(idAlerta);
         if (alerta != null) {
             alerta.setLimiteGasto(nuevoLimite);
             alerta.setActiva(activa);
+            
+            // Actualizar periodo si cambió
+            if (nuevoPeriodo != null && nuevoPeriodo != alerta.getPeriodo()) {
+                alerta.setPeriodo(nuevoPeriodo);  // Esto recreará la estrategia automáticamente
+            }
+            
+            // Actualizar categoría
+            if (nombreCategoria != null) {
+                Categoria categoria = catalogoCategorias.buscarPorNombre(nombreCategoria)
+                    .orElse(null);
+                alerta.setCategoria(categoria);
+            }
+            
             repositorio.guardarAlertas(catalogoAlertas.obtenerTodas());
         }
     }
     
+    /**
+     * Modifica solo límite y estado (versión simple).
+     */
+    public void modificarAlerta(String idAlerta, double nuevoLimite, boolean activa) {
+        modificarAlerta(idAlerta, nuevoLimite, activa, null, null);
+    }
     
+    /**
+     * Elimina una alerta.
+     */
     public void eliminarAlerta(String idAlerta) {
         Alerta alerta = catalogoAlertas.buscarPorId(idAlerta);
         if (alerta != null) {
@@ -77,31 +102,29 @@ public class ControladorAlertas {
         }
     }
     
-    
+    /**
+     * Verifica todas las alertas activas contra los gastos actuales.
+     */
     public void verificarAlertas(List<Gasto> gastos) {
         catalogoAlertas.verificarTodasLasAlertas(gastos);
         repositorio.guardarAlertas(catalogoAlertas.obtenerTodas());
     }
     
-    
     public List<Notificacion> obtenerNotificacionesNoLeidas() {
         return catalogoAlertas.obtenerTodas().stream()
-                .flatMap(alerta -> alerta.obtenerNotificacionesNoLeidas().stream())
-                .collect(Collectors.toList());
+            .flatMap(alerta -> alerta.obtenerNotificacionesNoLeidas().stream())
+            .collect(Collectors.toList());
     }
-    
     
     public long contarNotificacionesNoLeidas() {
         return obtenerNotificacionesNoLeidas().size();
     }
     
-    
     public List<Notificacion> obtenerTodasLasNotificaciones() {
         return catalogoAlertas.obtenerTodas().stream()
-                .flatMap(alerta -> alerta.getNotificaciones().stream())
-                .collect(Collectors.toList());
+            .flatMap(alerta -> alerta.getNotificaciones().stream())
+            .collect(Collectors.toList());
     }
-    
     
     public void marcarTodasLasNotificacionesComoLeidas() {
         catalogoAlertas.obtenerTodas().forEach(alerta -> 
@@ -109,7 +132,6 @@ public class ControladorAlertas {
         );
         repositorio.guardarAlertas(catalogoAlertas.obtenerTodas());
     }
-    
     
     public List<Alerta> obtenerTodasLasAlertas() {
         return catalogoAlertas.obtenerTodas();

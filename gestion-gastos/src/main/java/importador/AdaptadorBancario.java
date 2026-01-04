@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Arrays;
@@ -27,6 +28,7 @@ public class AdaptadorBancario implements AdaptadorFormato {
     private static final Logger logger = LoggerFactory.getLogger(AdaptadorBancario.class);
     private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ISO_LOCAL_DATE;
     private static final DateTimeFormatter FORMATTER_ALT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final DateTimeFormatter FORMATTER_DATETIME = DateTimeFormatter.ofPattern("M/d/yyyy H:mm");
     
     private final CatalogoCategorias catalogoCategorias;
     
@@ -39,7 +41,7 @@ public class AdaptadorBancario implements AdaptadorFormato {
     public List<Gasto> parsear(String contenidoArchivo) {
         logger.info("Iniciando parseo de archivo CSV con formato bancario");
         
-        List<Gasto> gastosParseados = Arrays.stream(contenidoArchivo.split("\n"))
+        List<Gasto> gastosParseados = Arrays.stream(contenidoArchivo.split("\r?\n"))
                 .skip(1) // Saltar cabecera (primera línea)
                 .map(String::trim)
                 .filter(linea -> !linea.isEmpty())
@@ -53,21 +55,22 @@ public class AdaptadorBancario implements AdaptadorFormato {
     
     /**
      * Parsea una línea CSV y retorna un Gasto.
-     * Formato esperado: fecha;cantidad;descripcion;categoria
+     * Formato esperado: Date,Account,Category,Subcategory,Note,Payer,Amount,Currency
      * Retorna null si hay error de formato (se filtra después).
      */
     private Gasto parsearLinea(String linea) {
         try {
-            String[] campos = linea.split(";");
-            if (campos.length < 4) {
-                logger.warn("Línea con formato incorrecto (menos de 4 campos): {}", linea);
+            String[] campos = linea.split(",");
+            if (campos.length < 8) {
+                logger.warn("Línea con formato incorrecto (menos de 8 campos): {}", linea);
                 return null;
             }
             
+            // Date,Account,Category,Subcategory,Note,Payer,Amount,Currency
             LocalDate fecha = parsearFecha(campos[0].trim());
-            double cantidad = parsearCantidad(campos[1].trim());
-            String descripcion = campos[2].trim();
-            String nombreCategoria = campos[3].trim();
+            double cantidad = parsearCantidad(campos[6].trim()); // Amount
+            String descripcion = campos[4].trim(); // Note
+            String nombreCategoria = campos[3].trim(); // Subcategory
             
             Categoria categoria = buscarOCrearCategoria(nombreCategoria);
             return new Gasto(cantidad, fecha, descripcion, categoria);
@@ -90,8 +93,14 @@ public class AdaptadorBancario implements AdaptadorFormato {
     private LocalDate parsearFecha(String fechaStr) {
         try {
             return LocalDate.parse(fechaStr, FORMATTER);
-        } catch (DateTimeParseException e) {
-            return LocalDate.parse(fechaStr, FORMATTER_ALT); // Formato alternativo
+        } catch (DateTimeParseException e1) {
+            try {
+                return LocalDate.parse(fechaStr, FORMATTER_ALT);
+            } catch (DateTimeParseException e2) {
+                // Formato con hora: M/d/yyyy H:mm
+                LocalDateTime dateTime = LocalDateTime.parse(fechaStr, FORMATTER_DATETIME);
+                return dateTime.toLocalDate();
+            }
         }
     }
     
@@ -104,10 +113,10 @@ public class AdaptadorBancario implements AdaptadorFormato {
     }
     
     @Override
-    public boolean puedeManejar(String contenidoArchivo) { // CORREGIDO TYPO
+    public boolean puedeManejar(String contenidoArchivo) {
         return contenidoArchivo != null && 
-               contenidoArchivo.contains(";") && 
-               contenidoArchivo.split("\n").length > 1;
+               contenidoArchivo.contains(",") && 
+               contenidoArchivo.split("\r?\n").length > 1;
     }
     
     /**
@@ -126,6 +135,6 @@ public class AdaptadorBancario implements AdaptadorFormato {
     
     @Override
     public String toString() {
-        return "AdaptadorBancario[formato=CSV, separador=';']";
+        return "AdaptadorBancario[formato=CSV, separador=',']";
     }
 }
