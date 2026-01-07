@@ -74,7 +74,7 @@ La aplicación incluye las siguientes características:
 1. **Clonar el repositorio:**
 
    ```bash
-   git clone https://github.com/antcanor/ProyectoTDS-GestionGastos.git
+   git clone https://github.com/Paidpar345/ProyectoTDS-GestionGastos.git
    ```
 
 2. **Navegar al directorio del proyecto:**
