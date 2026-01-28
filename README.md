@@ -24,17 +24,6 @@ La aplicación permite **registrar todos los gastos diarios** (compra en el supe
 
 Perfecta para **convivientes, familias o grupos de amigos** que comparten gastos:
 
----
-
-## 👥 Integrantes del Grupo
-
-| Nombre y Apellidos              | Correo Electrónico        | Subgrupo de Prácticas |
-| ------------------------------- | ------------------------- | --------------------- |
-| [Alonso Daniel Calatrava Navas] | [ad.calatravanavas@um.es] | [P_3.4]               |
-| [xx]                            | [ejemplo1@um.es]          | [xx]                  |
-| [xx]                            | [ejemplo2@um.es]          | [xx]                  |
-
----
 
 ## ✨ Funcionalidades Principales
 
